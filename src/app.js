@@ -1,5 +1,6 @@
 const express = require('express')
 const path = require('path') //modulo core di Node per i path
+const hbs = require('hbs')
 
 
 //console.log(__dirname) //stampa nome directory dove si trova questo file
@@ -9,9 +10,18 @@ console.log(path.join(__dirname,'../..')) //per ogni coppia di .. torna indietro
 console.log(path.join(__dirname,'../public')) //stampa dov'è publix
 */
 const app = express()
-const publicDirectoryPath = path.join(__dirname,'../public')
 
+//Define Paths for Express config
+const publicDirectoryPath = path.join(__dirname,'../public')
+const viewsPath = path.join(__dirname,'../templates/views')
+const partialsPath = path.join(__dirname,'../templates/partials')
+
+//Setup handlebars engine and views location
 app.set('view engine','hbs')  //set da delle impostazioni ad Express, hbs è il modulo installato --> in questa riga abbiamo settato handlebars e ora possiamo creare template dinamici
+app.set('views',viewsPath)
+hbs.registerPartials(partialsPath)
+
+// Setup static directory to serve
 app.use(express.static(publicDirectoryPath))
 
 app.get('',(req,res) => {
@@ -31,7 +41,9 @@ app.get('/about',(req,res) => {
 
 app.get('/help',(req,res) => {
     res.render('help', {
-        message: 'Help page for users'
+        message: 'Help page for users',
+        title: 'Help',
+        name: 'Christian'
     })
 })
 
@@ -64,9 +76,14 @@ app.get('/weather',(req,res) => {
     ])
 })
 
-//app.com
-//app.com/help
-//app.com/about
+app.get('/help/*',(req,res) => {
+    res.send('Help Article not found')
+})
+
+app.get('*',(req,res) => { // * sta ad indicare tutto quello che non è riconosciuto nei precedenti get
+    res.send('My 404 Page')
+})
+
 
 app.listen(3000, () => { //Inizializzi il server in ascolto, dando la porta dove rimani in ascolto e 3000 è per lo sviluppo locale
     console.log('Server is up on the port 3000')
