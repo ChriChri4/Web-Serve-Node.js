@@ -2,3 +2,6 @@
 2) nmm i express
 3) nella cartella scr metti i sorgenti
 4) cartella public per file html
+5) aggiunto handlebars per creare pagine dinamiche che utilizzano lo stesso HTML code (Template engine) handlebars su npm è il più usato a basso livello, hbs più semplice e lo inserito
+6) creata cartella view per i template dinamici
+7) Aggiunta cartella view per i template dinamici e index.hbs8) index.html sarebbe da eleiminare ma lo tengo
