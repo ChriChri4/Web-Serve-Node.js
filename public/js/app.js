@@ -1,0 +1,1 @@
+console.log('Client side javascript file is loaded!') //Questo messaggio dall opzione sviluppatori nel browser sarà visibile sulla console browser
