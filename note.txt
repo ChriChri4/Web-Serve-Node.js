@@ -1,0 +1,4 @@
+1) use npm init
+2) nmm i express
+3) nella cartella scr metti i sorgenti
+4) cartella public per file html
