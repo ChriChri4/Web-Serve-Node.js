@@ -9,5 +9,13 @@
 9) RICORDATI la funzione RENDER e non send per hbs file
 
 
+CSS:
+1) per color puoi definire anche l'hex code del colore ( es. #333333 è grey)
+2) Centrare il body:
+    - margin: 0 auto --> 0 non vai ad aggiungere spazio dai margini top e bottom come offset mentre auto distribuisce lo spazio per i margini sinistra e destra
+    - padding: 0 16px --> 0 sotto e sopra e 16px se riduci la finestra dal margine sinistro terrà 16px staccato
+3) padding aggiunge spazio dentro il box
+4) margin aggiunge spazio fuori il box
+
 COMANDI UTILI:
 1) nodemon app.js -e js,hbs dici a nodemon di rilanciare il server al cambiamento dei file js e hbs
