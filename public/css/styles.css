@@ -4,6 +4,14 @@ body {
     max-width: 650px;
     margin: 0 auto;
     padding: 0 16px;
+
+    display: flex;
+    flex-direction: column ; /*di default è su row*/
+    min-height: 100vh; /*vh = view hight quindi qua indica di occupare il 100% della view (visuale pagina)*/
+}
+
+.main-content {
+    flex-grow: 1;
 }
 
 footer {
@@ -30,4 +38,8 @@ header a { /*per ogni tag a dentro header*/
     color: #888888;
     margin-right: 16px;
     text-decoration: none; /*toglie il underline (sottolineato) che ha di default ai link*/
+}
+
+.portrait { /*classe portrait*/
+    width: 250px;
 }

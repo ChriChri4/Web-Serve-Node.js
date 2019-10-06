@@ -2,6 +2,8 @@
 <!-- Copiato da index.html -->
 <html>
     <head>
+        <title>Weather App</title>
+        <link rel="icon" href="/img/weather icon.png"> <!-- icona del sito web nei tab del browser-->
         <!-- Inserisco il CSS -->
         <link rel="stylesheet" href="/css/styles.css">
         <!-- aggiungo file di javascript -->
@@ -9,8 +11,12 @@
     </head>
 
     <body>
+        <div class="main-content">
+            {{>header}}
+            <p>Use this site to get your Weather</p>
+        </div>
         <!-- <h1>{{title}}</h1> --> <!-- Accede alla proprietà dell'oggeto definita in app.js nella funzione render -->
-        {{>header}}
+        
         {{>footer}}
     </body>
 

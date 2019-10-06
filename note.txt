@@ -17,6 +17,10 @@ CSS:
 3) padding aggiunge spazio dentro il box
 4) margin aggiunge spazio fuori il box
 5) header a {/*regole di style*/} --> per ogni tag a dentro header
+6) .portrait {} applica alla classe portrait
+7) mettere il footer piantato in fondo:
+    - usi le flex box
+8) <link rel="icon" href="/img/weather icon.png"> <!-- icona del sito web nei tab del browser--> nel head di ogni pagina
 
 COMANDI UTILI:
 1) nodemon app.js -e js,hbs dici a nodemon di rilanciare il server al cambiamento dei file js e hbs

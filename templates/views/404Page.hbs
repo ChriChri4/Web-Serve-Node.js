@@ -2,13 +2,20 @@
 
 <html>
     <head>
+        <title>404 Page</title>
+        <link rel="icon" href="/img/weather icon.png"> <!-- icona del sito web nei tab del browser-->
         <link rel="stylesheet" href="/css/styles.css">
     </head>
 
     <body>
-        {{>header}} <!-- fornisce il parziale della pagina header.hbs -->
+
+        <div class="main-content"> 
+            {{>header}} <!-- fornisce il parziale della pagina header.hbs -->
         <p>{{errorMessage}}</p>
+        </div>
+
         {{>footer}}
+
     </body>
 
 </html>
