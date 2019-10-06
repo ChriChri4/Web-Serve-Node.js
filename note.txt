@@ -22,6 +22,12 @@ CSS:
 7) mettere il footer piantato in fondo:
     - usi le flex box
 8) <link rel="icon" href="/img/weather icon.png"> <!-- icona del sito web nei tab del browser--> nel head di ogni pagina
+9) in input tag la proprietà placeholder è quello che si scrive nel form di input come "descrizione"
+
+Javascript LATO CLIENT:
+1) l'oggetto document è l'oggetto che si riferisce alla pagina HTML
+2) HTML lo <script> va messo in fondo se non deve eseguirlo subito all'inizio della pagina perchè così la pagina lo legge per ultimo se no sopra nel tag meta creava errori in console su Chrome
+    cioè sotto l'oggetto a cui lo script fa riferimento
 
 COMANDI UTILI:
 1) nodemon app.js -e js,hbs dici a nodemon di rilanciare il server al cambiamento dei file js e hbs

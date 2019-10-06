@@ -11,7 +11,13 @@ console.log('Client side javascript file is loaded!') //Questo messaggio dall op
     })
 }) */ 
 
-fetch('http://localhost:3000/weather?address=torino').then((response) => {
+const weatherForm = document.querySelector('form') //seleziono il tag form nella pagina html
+const search = document.querySelector('input')
+
+weatherForm.addEventListener('submit', (e) => { //attendi l'evento submit sulla variabile weatherForm e poi esegui la callback
+    e.preventDefault() //non fa refreshare la pagina per creare confusione al client
+
+    fetch('http://localhost:3000/weather?address='+search.value).then((response) => {
     response.json().then((data) => {
         if(data.error) {
             console.log(data.error)
@@ -20,4 +26,8 @@ fetch('http://localhost:3000/weather?address=torino').then((response) => {
             console.log(data.location)
         }
     })
+})
+
+    //console.log('testing') per debug
+    
 })
