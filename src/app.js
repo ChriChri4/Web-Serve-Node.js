@@ -64,7 +64,8 @@ app.get('/help',(req,res) => {
 })*/
 
 app.get('/weather',(req,res) => {
-    res.send([
+    //Esempio risposta array
+    /*res.send([
         {
             location: 'Torino',
             forecast: '50C°'
@@ -73,17 +74,33 @@ app.get('/weather',(req,res) => {
             location: 'Seattle',
             forecast: '14C°'
         }
-    ])
+    ])*/
+
+    if(!req.query.address) {
+        return res.send({
+            error: 'You must provide an address!'
+        })
+    } else {
+        return res.send({
+            address: req.query.address,
+            forecast: '',
+            location: ''
+        })
+    }
+
+
 })
 
+//esempio query
 app.get('/products',(req,res) => {
     //console.log(req.query) //qui ho cercato http://localhost:3000/products?search=games&rating=5 quindi ho passato le key: search e rating con i loro value in console mi stampa i valori query cercati
     //console.log(req.query.search) //qui mi stampa solo il valore per la key search
     if(!req.query.search) { //se non c'è search mostra un errore
-        res.send({
+        return res.send({
             error:'You must provide a search term'
         })
     }
+    console.log(req.query.search)
     res.send({
         products: []
     })
