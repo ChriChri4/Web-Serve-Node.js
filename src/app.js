@@ -1,6 +1,8 @@
 const express = require('express')
 const path = require('path') //modulo core di Node per i path
 const hbs = require('hbs')
+const forecast = require('./utils/forecast')
+const geocode = require('./utils/geocode')
 
 
 //console.log(__dirname) //stampa nome directory dove si trova questo file
@@ -80,15 +82,23 @@ app.get('/weather',(req,res) => {
         return res.send({
             error: 'You must provide an address!'
         })
-    } else {
-        return res.send({
-            address: req.query.address,
-            forecast: '',
-            location: ''
-        })
     }
+    geocode(req.query.address, (error,{latitude,longitude,location}) => {
+        if (error){
+            return res.send({error})
+        }
+        forecast(latitude,longitude, (error, forecastData) => {
+            if(error) {
+                return res.send({error})
+            }
+            return res.send({
+                address: req.query.address,
+                forecast: forecastData,
+                location
+            })
+    })
 
-
+    })
 })
 
 //esempio query

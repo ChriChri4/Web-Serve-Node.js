@@ -27,7 +27,7 @@ request({url:url,json:true},(error,{body}) => {
     {
         callback(body.error.description,undefined)
     } else {
-        callback(undefined,'La temperatura è di '+body.response.ob.tempC+' invece il tempo è '+body.response.ob.weather)
+        callback(undefined,'La temperatura è di '+body.response.ob.tempC+' C°'+' invece il tempo è '+body.response.ob.weather)
     }
 })
 }
