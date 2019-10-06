@@ -11,23 +11,35 @@ console.log('Client side javascript file is loaded!') //Questo messaggio dall op
     })
 }) */ 
 
-const weatherForm = document.querySelector('form') //seleziono il tag form nella pagina html
+const weatherForm = document.querySelector('form') //seleziono il PRIMO tag form che trova nella pagina html
 const search = document.querySelector('input')
+//const messageOne = document.querySelector('.className') ESEMPIO PER SELZIONARE TRAMITE CLASSE
+const messageOne = document.querySelector('#message-1') //seleziono il tag con quell'id
+const messageTwo = document.querySelector('#message-2')
+
+messageOne.textContent = '' //inizialmente vuoto
+messageTwo.textContent = '' //inizialmente vuoto
+
 
 weatherForm.addEventListener('submit', (e) => { //attendi l'evento submit sulla variabile weatherForm e poi esegui la callback
     e.preventDefault() //non fa refreshare la pagina per creare confusione al client
 
+    messageOne.textContent = 'Loading...'
+
     fetch('http://localhost:3000/weather?address='+search.value).then((response) => {
     response.json().then((data) => {
         if(data.error) {
-            console.log(data.error)
+            //console.log(data.error)
+            messageOne.textContent= data.error
         } else {
-            console.log(data.forecast)
-            console.log(data.location)
+            /*console.log(data.forecast)
+            console.log(data.location)*/
+            messageOne.textContent = data.location
+            messageTwo.textContent = data.forecast
         }
     })
 })
 
     //console.log('testing') per debug
-    
+
 })
