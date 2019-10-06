@@ -7,6 +7,7 @@
 7) Aggiunta cartella view per i template dinamici e index.hbs8) index.html sarebbe da eleiminare ma lo tengo
 8) I partials puoi usarli per rendere una cosa sola su tutte le altre pagine senza scriverle in ognuna tutte le volte
 9) RICORDATI la funzione RENDER e non send per hbs file
+10) Ricordati che in una funzione .get non puoi rispondere più di una volta!!! devi mandare una risposta sola (send()) --> errore in console: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
 
 
 CSS:

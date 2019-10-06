@@ -76,6 +76,19 @@ app.get('/weather',(req,res) => {
     ])
 })
 
+app.get('/products',(req,res) => {
+    //console.log(req.query) //qui ho cercato http://localhost:3000/products?search=games&rating=5 quindi ho passato le key: search e rating con i loro value in console mi stampa i valori query cercati
+    //console.log(req.query.search) //qui mi stampa solo il valore per la key search
+    if(!req.query.search) { //se non c'è search mostra un errore
+        res.send({
+            error:'You must provide a search term'
+        })
+    }
+    res.send({
+        products: []
+    })
+})
+
 app.get('/help/*',(req,res) => {
     res.render('404Page',{
         errorMessage: 'Page not found in Help section',
