@@ -77,11 +77,19 @@ app.get('/weather',(req,res) => {
 })
 
 app.get('/help/*',(req,res) => {
-    res.send('Help Article not found')
+    res.render('404Page',{
+        errorMessage: 'Page not found in Help section',
+        title: 'My 404 Page',
+        name: 'Christian'
+    })
 })
 
 app.get('*',(req,res) => { // * sta ad indicare tutto quello che non è riconosciuto nei precedenti get
-    res.send('My 404 Page')
+    res.render('404Page',{
+        errorMessage: 'Page not found',
+        title: 'My 404 Page',
+        name: 'Christian'
+    })
 })
 
 
