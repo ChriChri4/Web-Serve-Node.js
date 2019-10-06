@@ -16,6 +16,7 @@ CSS:
     - padding: 0 16px --> 0 sotto e sopra e 16px se riduci la finestra dal margine sinistro terrà 16px staccato
 3) padding aggiunge spazio dentro il box
 4) margin aggiunge spazio fuori il box
+5) header a {/*regole di style*/} --> per ogni tag a dentro header
 
 COMANDI UTILI:
 1) nodemon app.js -e js,hbs dici a nodemon di rilanciare il server al cambiamento dei file js e hbs
