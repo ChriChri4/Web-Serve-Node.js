@@ -9,6 +9,7 @@
 9) RICORDATI la funzione RENDER e non send per hbs file
 10) Ricordati che in una funzione .get non puoi rispondere più di una volta!!! devi mandare una risposta sola (send()) --> errore in console: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
 11) Cerca di non usare i moduli globali ma locali in modo che altri se vogliono eseguire localemente non hanno problemi con le dependency
+12) Installare Heroku CLI
 
 CSS:
 1) per color puoi definire anche l'hex code del colore ( es. #333333 è grey)
