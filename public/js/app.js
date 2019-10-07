@@ -25,8 +25,8 @@ weatherForm.addEventListener('submit', (e) => { //attendi l'evento submit sulla 
     e.preventDefault() //non fa refreshare la pagina per creare confusione al client
 
     messageOne.textContent = 'Loading...'
-
-    fetch('http://localhost:3000/weather?address='+search.value).then((response) => {
+//cambiato da 'http://localhost:3000/weather?address=' in sotto, per eseguire su Heroku
+    fetch('/weather?address='+search.value).then((response) => {
     response.json().then((data) => {
         if(data.error) {
             //console.log(data.error)

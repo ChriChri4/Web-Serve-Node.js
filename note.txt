@@ -31,3 +31,14 @@ Javascript LATO CLIENT:
 
 COMANDI UTILI:
 1) nodemon app.js -e js,hbs dici a nodemon di rilanciare il server al cambiamento dei file js e hbs
+
+DEPLOY HEROKU:
+1) Modificato il campo script su package-json inserendo il comando e quale file far eseguire ad HEROKU
+2) Modificata porta di ascolto da 3000 (serve solo localmente) con porta fornita da HEROKU
+//Porta di ascolto di Heroku oppure 3000 se eseguita localmente tramite operatore OR
+const port = process.env.PORT || 3000
+dice: se esiste quella variabile se no metti 3000
+3) !!!!!!!!!!!!!!!!!!!!!NB!!!!!!!!!!!!!!!!!!!!
+CREA CHIAVE SSH e condividila con Heroku e GitHub
+4) //cambiato da 'http://localhost:3000/weather?address=' in sotto, per eseguire su Heroku
+    fetch('/weather?address='+search.value).then((response)

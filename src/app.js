@@ -13,6 +13,9 @@ console.log(path.join(__dirname,'../public')) //stampa dov'è publix
 */
 const app = express()
 
+//Porta di ascolto di Heroku se esiste oppure 3000 se eseguita localmente tramite operatore OR
+const port = process.env.PORT || 3000
+
 //Define Paths for Express config
 const publicDirectoryPath = path.join(__dirname,'../public')
 const viewsPath = path.join(__dirname,'../templates/views')
@@ -133,6 +136,6 @@ app.get('*',(req,res) => { // * sta ad indicare tutto quello che non è riconosc
 })
 
 
-app.listen(3000, () => { //Inizializzi il server in ascolto, dando la porta dove rimani in ascolto e 3000 è per lo sviluppo locale
-    console.log('Server is up on the port 3000')
+app.listen(port, () => { //Inizializzi il server in ascolto, dando la porta dove rimani in ascolto e 3000 è per lo sviluppo locale
+    console.log('Server is up on the port '+port)
 }) 
